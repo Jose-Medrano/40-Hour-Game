@@ -8,8 +8,7 @@ public class LavaKillBox : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            collision.gameObject.transform.position = new Vector3(0, 0, 0);
-            transform.position = new Vector3(0, -54, -1);
+            collision.gameObject.GetComponent<PlayerRestart>().Restart();
         }
     }
 }

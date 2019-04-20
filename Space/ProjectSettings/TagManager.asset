@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Ice Item
+  - Ice Death Block
+  - Lava
+  - Lava Item
   layers:
   - Default
   - TransparentFX

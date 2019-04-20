@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class LavaPickup : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    // Should collect lava items on collision.
+    void OnTriggerEnter2D(Collider2D other)
     {
-        
-    }
+        if (other.gameObject.CompareTag("Player"))
+        {
+            GameObject.Find("Ice Death Block").transform.position =
+                new Vector3(transform.position.x, other.transform.position.y + 503f, transform.position.z);
+            GameObject.Find("Lava").GetComponent<LavaRise>().active = true;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+            gameObject.SetActive(false);
+            GameObject.Find("Ice Item").SetActive(true);
+        }
     }
 }
