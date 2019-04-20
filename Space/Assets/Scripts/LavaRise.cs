@@ -5,6 +5,7 @@ using UnityEngine;
 public class LavaRise : MonoBehaviour
 {
     float rise;
+    public bool active = true;
 	
     // Update is called once per frame
     void Update()
@@ -14,10 +15,16 @@ public class LavaRise : MonoBehaviour
         {
             rise = 1.5f;
         }
+
         if (rise > 0)
         {
             transform.position = new Vector3(transform.position.x, transform.position.y + 0.1f, transform.position.z);
             rise -= 0.1f;
+        }
+
+        if (!active)
+        {
+            transform.position = new Vector3(0, -54, -1);
         }
     }
 }

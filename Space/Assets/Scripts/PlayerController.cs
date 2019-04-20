@@ -22,4 +22,5 @@ public class PlayerController : MonoBehaviour
         rb.velocity = movement;
         Debug.Log(moveX);
     }
+
 }
