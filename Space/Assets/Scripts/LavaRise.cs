@@ -5,10 +5,12 @@ using UnityEngine;
 public class LavaRise : MonoBehaviour
 {
     float rise;
+	
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && 
+			GameObject.Find("Player").GetComponent<PlayerJump>().IsGrounded())
         {
             rise = 1.5f;
         }

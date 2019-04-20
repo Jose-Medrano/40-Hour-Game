@@ -6,6 +6,7 @@ public class PlayerJump : MonoBehaviour
 {
     float jumpSpeed;
     Rigidbody2D rb;
+	
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +26,7 @@ public class PlayerJump : MonoBehaviour
         rb.velocity = movement;
     }
 
-    bool IsGrounded()
+    public bool IsGrounded()
     {
         return Physics2D.Raycast(transform.position - new Vector3(0, transform.localScale.y / 2 + 0.1f, 0), Vector2.down, 0.1f);
     }
