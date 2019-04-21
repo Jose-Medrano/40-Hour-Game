@@ -12,7 +12,7 @@ public class PlayerJump : MonoBehaviour
 	float remainingJump;
 	
 	// Jump speed
-    float initJump = 4f;
+    float initJump = 5f;
 	
 	// Rigidbody
     Rigidbody2D rb;
