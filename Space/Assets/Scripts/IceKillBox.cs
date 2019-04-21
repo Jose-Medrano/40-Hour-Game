@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class IceKillBox : MonoBehaviour
 {
-    public bool active = false;
+	bool started = false;
+    public bool falling = false;
+	float speed = 0.03f;
+	
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -15,10 +18,17 @@ public class IceKillBox : MonoBehaviour
 
     private void Update()
     {
-        if (active)
-        {
-            transform.position = new Vector3(transform.position.x, transform.position.y - 0.02f, transform.position.z);
-        }
+		// Wait for player to move to start
+		if (Input.anyKey) started = true;
+		
+		if (started) {
+			if (falling)
+			{
+				transform.position = new Vector3(transform.position.x, transform.position.y - speed, transform.position.z);
+			} else {
+				transform.position = new Vector3(transform.position.x, transform.position.y + speed, transform.position.z);
+			}
+		}
     }
 
 

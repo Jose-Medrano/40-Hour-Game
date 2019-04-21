@@ -9,12 +9,11 @@ public class LavaPickup : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            GameObject.Find("Ice Death Block").transform.position =
-                new Vector3(transform.position.x, other.transform.position.y + 503f, transform.position.z);
-            GameObject.Find("Lava").GetComponent<LavaRise>().active = true;
+            GameObject.Find("Ice Death Block").GetComponent<IceKillBox>().falling = false;
+            GameObject.Find("Lava").GetComponent<LavaRise>().rising = true;
 
             gameObject.SetActive(false);
-            GameObject.Find("Ice Item").SetActive(true);
+            //GameObject.Find("Ice Item").SetActive(true);
         }
     }
 }

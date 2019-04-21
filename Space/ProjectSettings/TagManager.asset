@@ -8,6 +8,7 @@ TagManager:
   - Ice Death Block
   - Lava
   - Lava Item
+  - Platform
   layers:
   - Default
   - TransparentFX
@@ -44,4 +45,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Lava
+    uniqueID: 4256791435
     locked: 0

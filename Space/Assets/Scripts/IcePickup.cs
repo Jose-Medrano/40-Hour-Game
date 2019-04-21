@@ -9,14 +9,14 @@ public class IcePickup : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            GameObject.Find("Ice Death Block").transform.position = 
-                new Vector3(transform.position.x, other.transform.position.y + 55f, transform.position.z);
-            GameObject.Find("Lava").GetComponent<LavaRise>().active = false;
-            GameObject.Find("Ice Death Block").GetComponent<IceKillBox>().active = true;
+            /*GameObject.Find("Ice Death Block").transform.position = 
+                new Vector3(transform.position.x, other.transform.position.y + 7f, transform.position.z);*/
+            GameObject.Find("Lava").GetComponent<LavaRise>().rising = false;
+            GameObject.Find("Ice Death Block").GetComponent<IceKillBox>().falling = true;
 
             // Hides all IcePickups, shows all LavaPickups
             gameObject.SetActive(false);
-            GameObject.Find("Lava Item").SetActive(true);
+            //GameObject.Find("Lava Item").SetActive(true);
         }
     }
 }
