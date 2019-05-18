@@ -7,14 +7,6 @@ public class IceKillBox : MonoBehaviour
 	bool started = false;
     public bool falling = false;
 	float speed = 0.03f;
-	
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            collision.gameObject.GetComponent<PlayerRestart>().Restart();
-        }
-    }
 
     private void Update()
     {
